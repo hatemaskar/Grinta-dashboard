@@ -38,7 +38,6 @@
       data-tag="font"
     />
     <link rel="stylesheet" href="./style.css" />
-    <?php include 'header.php'; ?>
   </head>
   <body>
     <div>
@@ -53,7 +52,6 @@
             class="desktop3-rectangle17"
           />
           <span class="desktop3-text"></span>
-          <div class='main-menu'style='display:none;'>
           <div class="desktop3-group13">
             <span class="desktop3-text01"><span>لوحة التحكم</span></span>
             <img
@@ -75,8 +73,42 @@
               class="desktop3-vector2"
             />
           </div>
+          <script type="text/javascript">
 
-         
+            
+            
+           function toggle(){
+
+            console.log ('Hellooo');
+            // document.getElementById('show-usernames').style.display = "none";
+            //    if (targetDiv.style.display !== "none") {
+            //      targetDiv.style.display = "none";
+            //   } else {
+            //     targetDiv.style.display = "block";
+            //    }
+            
+           }
+            
+          </script>
+          <div class="desktop3-group7">
+            <span class="desktop3-text05 users"><span>مستخدمين</span></span>
+            <span class="desktop3-text07"><span><?php echo $userNumber; ?></span></span>
+          </div>
+
+          <div class="show-usernames" style="display:block;">
+        
+          <div class="desktop3-group8">
+            <span class="desktop3-text25 users"><span>أسئلة</span></span>
+            <span class="desktop3-text27"><span><?php echo $questNumber; ?></span></span>
+          </div>
+          <div class="desktop3-group17">
+            <span class="desktop3-text29 users"><span>أعلى نقاط</span></span>
+            <span class="desktop3-text31"><span><?php 
+         echo '<pre>'; 
+         print_r ($maxScore['maxScore']) ; 
+         echo '</pre>';
+         ?></span></span>
+          </div>
           <div class="desktop3-group15">
             <span class="desktop3-text33"><span>الأسئلة</span></span>
             <img
@@ -90,10 +122,7 @@
               class="desktop3-vector4"
             />
           </div>
-
-      
-          </div>
-          <div class="umami-logo">
+          <div class="desktop3-group16">
             <span class="desktop3-text35"><span>أضافة سؤال</span></span>
             <img
               src="public/playground_assets/vector1978-oh4c.svg"
@@ -104,12 +133,12 @@
           <img
             src="public/playground_assets/logo21lightzohomail11978-6bvk-200h.png"
             alt="Logo21Lightzohomail11978"
-            class="desktop3-umami-logo"
+            class="desktop3-logo21lightzohomail1"
           />
           <img
             src="public/playground_assets/logo10111978-ll6-200h.png"
             alt="logo10111978"
-            class="desktop3-grinta-logo"
+            class="desktop3-logo1011"
           />
         </div>
       </div>
