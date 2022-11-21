@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions</title>
+    <title>Questions List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
 </head>
 <body>
     <div class="container">
         <h2>Questions List</h2>
-        <a class="btn btn-primary" href="/Grinta-dashboard/createQuestion.php" role="button">Add Question</a>
+        <a class="btn btn-primary" href="/Grinta-dashboard/create.php" role="button">Add Question</a>
         <br>
         <table class="table">
             <thead>
@@ -60,14 +60,15 @@
                              <td>$row[category]</td>
                              <td>$row[videoURL]</td>
                              <td>
-                             <a class="btn-btn-primary btn sm" href="/Grinta-dashboard/editQuestion.php?id=$row[id]">Edit</a>
-                             <a class=" href="/Grinta-dashboard/deleteQuestion.php?id=$row[id]">Delete</a>  
+                                <a class='btn btn-primary btn sm' href='/Grinta-dashboard/editQuestion.php?id=$row[id]'>Edit</a>
+                                <a class='btn btn-danger btn sm' href='/Grinta-dashboard/deleteQuestion.php?id=$row[id]'>Delete</a>
+                                
                              </td>
                         </tr>
                         ";
                     }
                 ?>
-
+                  
             </tbody>
         </table>
         
