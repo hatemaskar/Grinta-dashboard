@@ -96,7 +96,6 @@
           </div>
 
           <div class="show-usernames" style="display:block;">
-        
           <div class="desktop3-group9">
             <img
               src="public/playground_assets/rectangle171977-gj6g-200h.png"
@@ -105,10 +104,11 @@
             />
             <span class="desktop3-text09 users"><span>الأسم</span></span>
             <span class="desktop3-text11"><span>اسم اللاعب</span></span>
-            <span class="desktop3-users"><span> <?php 
-            include 'usernames.php';
-
-            ?></span></span>
+            <span class="desktop3-users"><span> 
+              <?php 
+              include 'usernames.php';
+              ?> 
+            </span></span>
           </div>
           <div class="desktop3-group12">
             <img
