@@ -66,30 +66,14 @@
             />
           </div>
           <div type =''class="desktop3-group14">
-            <div class="desktop3-text03" onclick = "toggle()"><span>اللاعبين</span></div>
+            <div class="desktop3-text03" ><a href='/users.php'>اللاعبين</a></div>
             <img
               src="public/playground_assets/vector1977-y39k.svg"
               alt="Vector1977"
               class="desktop3-vector2"
             />
           </div>
-          <script type="text/javascript">
-
-            
-            
-           function toggle(){
-
-            console.log ('Hellooo');
-            // document.getElementById('show-usernames').style.display = "none";
-            //    if (targetDiv.style.display !== "none") {
-            //      targetDiv.style.display = "none";
-            //   } else {
-            //     targetDiv.style.display = "block";
-            //    }
-            
-           }
-            
-          </script>
+   
           <div class="desktop3-group7">
             <span class="desktop3-text05 users"><span>مستخدمين</span></span>
             <span class="desktop3-text07"><span><?php echo $userNumber; ?></span></span>
@@ -107,7 +91,14 @@
          echo '<pre>'; 
          print_r ($maxScore['maxScore']) ; 
          echo '</pre>';
+        
+         
          ?></span></span>
+          <span class='users'>
+            <?php 
+            include 'usernames.php';
+            ?>
+          </span>
           </div>
           <div class="desktop3-group15">
             <span class="desktop3-text33"><span>الأسئلة</span></span>

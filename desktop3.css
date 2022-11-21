@@ -39,6 +39,10 @@
   margin-bottom: 0;
   text-decoration: none;
 }
+.users{
+  color:white;
+  top: 93px;
+}
 .desktop3-group13 {
   top: 254.484375px;
   left: 1248px;
@@ -158,6 +162,7 @@
   justify-content: flex-start;
   background-color: rgba(27, 33, 48, 1);
 }
+
 .desktop3-text05 {
   top: 15px;
   left: 59px;

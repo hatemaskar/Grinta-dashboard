@@ -43,14 +43,14 @@
     <div>
       <link href="./desktop3.css" rel="stylesheet" />
       <?php  include 'functions.php'; ?>
-
       <div class="desktop3-container">
         <div class="desktop3-desktop3">
           <img
-            src="public/playground_assets/rectangle171977-xbb9-300w.png"
-            alt="Rectangle171977"
-            class="desktop3-rectangle17"
+          src="public/playground_assets/rectangle171977-xbb9-300w.png"
+          alt="Rectangle171977"
+          class="desktop3-rectangle17"
           />
+          <!-- <h1> Hello</h> -->
           <span class="desktop3-text"></span>
           <div class="desktop3-group13">
             <span class="desktop3-text01"><span>لوحة التحكم</span></span>
@@ -66,30 +66,14 @@
             />
           </div>
           <div type =''class="desktop3-group14">
-            <div class="desktop3-text03" onclick = "toggle()"><span>اللاعبين</span></div>
+            <div class="desktop3-text03" ><a href='/Grinta-dashboard/users.php'>اللاعبين</a></div>
             <img
               src="public/playground_assets/vector1977-y39k.svg"
               alt="Vector1977"
               class="desktop3-vector2"
             />
           </div>
-          <script type="text/javascript">
-
-            
-            
-           function toggle(){
-
-            console.log ('Hellooo');
-            // document.getElementById('show-usernames').style.display = "none";
-            //    if (targetDiv.style.display !== "none") {
-            //      targetDiv.style.display = "none";
-            //   } else {
-            //     targetDiv.style.display = "block";
-            //    }
-            
-           }
-            
-          </script>
+     
           <div class="desktop3-group7">
             <span class="desktop3-text05 users"><span>مستخدمين</span></span>
             <span class="desktop3-text07"><span><?php echo $userNumber; ?></span></span>
