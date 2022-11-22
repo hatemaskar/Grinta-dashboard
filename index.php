@@ -92,6 +92,8 @@
          print_r ($maxScore['maxScore']) ; 
          echo '</pre>';
          ?></span></span>
+
+         
           </div>
           <div class="desktop3-group15">
             <span class="desktop3-text33"><span>الأسئلة</span></span>
