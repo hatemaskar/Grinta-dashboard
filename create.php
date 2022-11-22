@@ -20,15 +20,15 @@ $successMessage ='';
 
 //Check if data transimetted using POST method
 if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
-    $question= $_POST['question'];
+    $question=   $_POST['question'];
     $correctAns= $_POST['correctAns'];
-    $fakeAns1= $_POST['fakeAns1'];
-    $fakeAns2= $_POST['fakeAns2'];
-    $fakeAns3= $_POST['fakeAns3'];
-    $type= $_POST['type'];
+    $fakeAns1=   $_POST['fakeAns1'];
+    $fakeAns2=   $_POST['fakeAns2'];
+    $fakeAns3=   $_POST['fakeAns3'];
+    $type=       $_POST['type'];
     $difficulty= $_POST['difficulty'];
-    $category= $_POST['category'];
-    $videoURL= $_POST['videoURL'];
+    $category=   $_POST['category'];
+    $videoURL=   $_POST['videoURL'];
 
 // Check required fileds if empty
     do {
@@ -37,9 +37,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
             break;
         }
 //Add new question to database
-
-        $sql= 'INSERT INTO questions (question, correctAns, fakeAns1, fakeAns2, fakeAns3, type, difficulty, category, videoURL)' . 
-                'VALUES ('$question','$correctAns','$fakeAns1','$fakeAns2','$fakeAns3','$type','$difficulty','$category','$videoURL')';
+        $sql= "INSERT INTO questions (question, correctAns, fakeAns1, fakeAns2, fakeAns3, type, difficulty, category, videoURL) VALUES ('" . $question . "' , '" . $correctAns . "' ,'" . $fakeAns1 . "' ,'" . $fakeAns2 . "' ,'" . $fakeAns3 . "' ,'" . $type . "' ,'" . $difficulty . "' ,'" . $category . "' ,'" . $videoURL . "' ,)";
         $result = $connect->query($sql);
 
         if(! $result){
@@ -67,10 +65,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">

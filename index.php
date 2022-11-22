@@ -96,7 +96,7 @@
          
           </div>
           <div class="desktop3-group15">
-            <span class="desktop3-text33"><span>الأسئلة</span></span>
+            <a class="desktop3-text33"> <a  class="desktop3-text33"href="/Grinta-dashboard/postQuestions.php"> الأسئلة</a> </span>
             <img
               src="public/playground_assets/vector1978-eujb.svg"
               alt="Vector1978"
