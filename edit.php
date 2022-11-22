@@ -1,9 +1,9 @@
+
 <?php
 
- // Create conenction
- $connect = mysqli_connect('127.0.0.1','root','','grinta');
+$connect = mysqli_connect('127.0.0.1','root','','grinta');
 
-
+$id= '';
 $question= '';
 $correctAns= '';
 $fakeAns1= '';
@@ -17,9 +17,38 @@ $videoURL= '';
 $error_Message='';
 $successMessage ='';
 
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+// Read  data from database
+    if (!isset($_GET["id"])){
+        header ("location: /Grinta-dashboard/index.php");
+        exit;
+    }
 
-//Check if data transimetted using POST method
-if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
+    $id = $_GET["id"];
+    $sql= "SELECT * FROM questions WHERE id=$id";
+    $result= $connect->query($sql);
+    $row=$result->fetch_assoc();
+
+    if (!$row){
+        header ("location: /Grinta-dashboard/index.php");
+        exit;
+    }
+
+    $question= $row['question'];
+    $correctAns= $row['correctAns'];
+    $fakeAns1= $row['fakeAns1'];
+    $fakeAns2= $row['fakeAns2'];
+    $fakeAns3= $row['fakeAns3'];
+    $type= $row['type'];
+    $difficulty= $row['difficulty'];
+    $category= $row['category'];
+    $videoURL= $row['videoURL'];
+   
+}
+
+else {
+// Update  data to database
+    $id=$_POST['id'];
     $question=   $_POST['question'];
     $correctAns= $_POST['correctAns'];
     $fakeAns1=   $_POST['fakeAns1'];
@@ -30,40 +59,28 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
     $category=   $_POST['category'];
     $videoURL=   $_POST['videoURL'];
 
-// Check required fileds if empty
     do {
         if (empty('question') || empty('correctAns') || empty('category') || empty('type') || empty('difficulty')) {
             $error_Message = ' Question, Correct Answer, Category, Question type and Difficulty are required';
             break;
         }
-//Add new question to database
-        $sql= "INSERT INTO questions (question, correctAns, fakeAns1, fakeAns2, fakeAns3, type, difficulty, category, videoURL) VALUES ('" . $question . "' , '" . $correctAns . "' ,'" . $fakeAns1 . "' ,'" . $fakeAns2 . "' ,'" . $fakeAns3 . "' ,'" . $type . "' ,'" . $difficulty . "' ,'" . $category . "' ,'" . $videoURL . "' )";
-        $result = $connect->query($sql);
 
-        if(! $result){
-            $error_Message = 'Invalid query' . $connect->error;
-            break;
-        }
+        $sql="UPDATE questions".
+            "SET question ='$question', correctAns = '$correctAns', fakeAns1 = '$fakeAns1',fakeAns2 = '$fakeAns2',fakeAns3 = '$fakeAns3',type = '$type',difficulty = '$difficulty',category = '$category',videoURL = '$videoURL'" .
+            "WHERE id='$id'";
 
-        $question= '';
-        $correctAns= '';
-        $fakeAns1= '';
-        $fakeAns2= '';
-        $fakeAns3= '';
-        $type= '';
-        $difficulty= '';
-        $category= '';
-        $videoURL= '';
+            $result=$connect->query($sql);
 
-        $successMessage = 'Question has been added successfuly!';
+            if(! $result){
+                $error_Message = 'Invalid query' . $connect->error;
+                break;
+            }
+            $successMessage = 'Question has been updated successfuly!';
+            header('location:/Grinta-dashboard/postQuestions.php');
+            exit;
 
-        //Redirect the user to Question List
-        header('location:/Grinta-dashboard/postQuestions.php');
-        exit;
-
-    } while(false);
+    }while(true);
 }
-
 
 ?>
 
@@ -73,13 +90,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Question</title>
+    <title>Edit Question</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" ></script>
 </head>
 <body>
     <div class="container">
-        <h2>Add New Question</h2>
+        <h2>Eidt Question</h2>
         <?php  
         if (!empty($error_Message)){
            echo ' <div class="alert alert-warning" role="alert">
@@ -89,6 +106,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
         }
         ?>
         <form method='POST'>
+            <input type="hidden" name="id" value="<?php echo $id; ?>" >
         <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Question</label>
                 <div class="col-sm-6">
@@ -158,7 +176,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
              ?>
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
                 <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="/Grinta-dashboard/index.php" role="button">Cancel</a>
