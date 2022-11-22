@@ -65,9 +65,7 @@ else {
             break;
         }
 
-        $sql="UPDATE questions".
-            "SET question ='$question', correctAns = '$correctAns', fakeAns1 = '$fakeAns1',fakeAns2 = '$fakeAns2',fakeAns3 = '$fakeAns3',type = '$type',difficulty = '$difficulty',category = '$category',videoURL = '$videoURL'" .
-            "WHERE id='$id'";
+        $sql="UPDATE questions SET question ='$question', correctAns = '$correctAns', fakeAns1 = '$fakeAns1',fakeAns2 = '$fakeAns2',fakeAns3 = '$fakeAns3',type = '$type',difficulty = '$difficulty',category = '$category',videoURL = '$videoURL' WHERE id='$id'";
 
             $result=$connect->query($sql);
 
