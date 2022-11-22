@@ -55,7 +55,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
         $category= '';
         $videoURL= '';
 
-        $successMessage = 'Question has been added successfuly!';
+       echo $successMessage = 'Question has been added successfuly!';
 
         //Redirect the user to Question List
         header('location:/Grinta-dashboard/postQuestions.php');

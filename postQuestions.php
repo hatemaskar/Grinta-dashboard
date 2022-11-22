@@ -61,7 +61,7 @@
                              <td>$row[videoURL]</td>
                              <td>
                                 <a class='btn btn-primary btn sm' href='/Grinta-dashboard/edit.php?id=$row[id]'>Edit</a>
-                                <a class='btn btn-danger btn sm' href='/Grinta-dashboard/deleteQuestion.php?id=$row[id]'>Delete</a>
+                                <a class='btn btn-danger btn sm' href='/Grinta-dashboard/delete.php?id=$row[id]'>Delete</a>
                                 
                              </td>
                         </tr>
