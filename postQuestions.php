@@ -34,7 +34,7 @@
                     $connect = mysqli_connect('127.0.0.1','root','','grinta');
 
                     // Check connection
-                    if ($connect->connect_errno){
+                    if ($connect->connect_error){
                         die("Connection failed: " . $connect->connect_error);
                     }
 
