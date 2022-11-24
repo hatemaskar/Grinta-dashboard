@@ -124,8 +124,8 @@
     href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&amp;display=swap"
     data-tag="font" />
   <link rel="stylesheet" href="./style.css" />
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" ></script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -167,10 +167,10 @@
             <span class="desktop3-text29 users"><span>أعلى نقاط</span></span>
             <span class="desktop3-text31"><span>
                 <?php
-            echo '<pre>';
-            print_r($maxScore['maxScore']);
-            echo '</pre>';
-            ?>
+                echo '<pre>';
+                print_r($maxScore['maxScore']);
+                echo '</pre>';
+                ?>
               </span></span>
 
 
