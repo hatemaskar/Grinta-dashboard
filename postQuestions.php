@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
 </head>
+
 <body>
     <div class="container">
         <h2>Questions List</h2>
@@ -30,24 +32,24 @@
             </thead>
             <tbody>
                 <?php
-                    // Create conenction
-                    $connect = mysqli_connect('127.0.0.1','root','','grinta');
+                // Create conenction
+                $connect = mysqli_connect('127.0.0.1', 'root', '', 'grinta');
 
-                    // Check connection
-                    if ($connect->connect_error){
-                        die("Connection failed: " . $connect->connect_error);
-                    }
+                // Check connection
+                if ($connect->connect_error) {
+                    die("Connection failed: " . $connect->connect_error);
+                }
 
-                    // Read all row from database table
-                    $sql='SELECT * FROM questions';
-                    $result = $connect->query($sql);
+                // Read all row from database table
+                $sql = 'SELECT * FROM questions';
+                $result = $connect->query($sql);
 
-                    if (!$result) {
-                        die('Invalid query: ' . $connect_error);
-                    }
-                    
-                    while($row = $result->fetch_assoc()){
-                        echo "
+                if (!$result) {
+                    die('Invalid query: ' . $connect_error);
+                }
+
+                while ($row = $result->fetch_assoc()) {
+                    echo "
                         <tr>
                              <td>$row[id]</td>
                              <td>$row[question]</td>
@@ -66,14 +68,15 @@
                              </td>
                         </tr>
                         ";
-                    }
+                }
                 ?>
-                  
+
             </tbody>
         </table>
-        
+
 
 
     </div>
 </body>
+
 </html>

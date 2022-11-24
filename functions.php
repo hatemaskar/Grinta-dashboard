@@ -1,32 +1,31 @@
+<?php
+$connect = mysqli_connect('127.0.0.1', 'root', '', 'grinta');
 
- <?php
-    $connect = mysqli_connect('127.0.0.1','root','','grinta');
+$usersquery = 'SELECT * FROM users ';
+$questquery = 'SELECT * FROM questions ';
+$maxScoreQuery = 'SELECT * FROM users ORDER BY users.maxScore DESC';
 
-    $usersquery = 'SELECT * FROM users ';
-    $questquery = 'SELECT * FROM questions ';
-    $maxScoreQuery = 'SELECT * FROM users ORDER BY users.maxScore DESC';
-   
 
-    $get_users = mysqli_query($connect,$usersquery);
-    $get_questnumber = mysqli_query($connect,$questquery);
-    $get_maxScore = mysqli_query($connect,$maxScoreQuery);
-  
+$get_users = mysqli_query($connect, $usersquery);
+$get_questnumber = mysqli_query($connect, $questquery);
+$get_maxScore = mysqli_query($connect, $maxScoreQuery);
 
-    $userNumber =  mysqli_num_rows($get_users);
-    $questNumber = mysqli_num_rows($get_questnumber);
 
-   $maxScore = mysqli_fetch_assoc($get_maxScore);
-  
-  
+$userNumber = mysqli_num_rows($get_users);
+$questNumber = mysqli_num_rows($get_questnumber);
 
-   // Display Max Score of the game
-   // echo '<pre>'; 
-   //   print_r ($maxScore['maxScore']) ; 
-   //   echo '</pre>';
-   //   echo '<pre>'; 
-   //   print_r ($maxScore['name']) ; 
+$maxScore = mysqli_fetch_assoc($get_maxScore);
 
-   //    echo '</pre>';
+
+
+// Display Max Score of the game
+// echo '<pre>'; 
+//   print_r ($maxScore['maxScore']) ; 
+//   echo '</pre>';
+//   echo '<pre>'; 
+//   print_r ($maxScore['name']) ; 
+
+//    echo '</pre>';
 
 //   Display players names list
 //    while ($playerList = mysqli_fetch_assoc($get_users)){
@@ -46,7 +45,7 @@
 //     print_r ($playerList['name']) ; 
 //     echo '</pre>';
 //     $i++;
-    
+
 //   }
 //   $connect->close();
 //  };
@@ -62,12 +61,11 @@
 //     print_r ($playerList['maxScore']) ; 
 //     echo '</pre>';
 //     $i++;
-    
+
 //   }
 //   $connect->close();
 //  };
-   
-   $connect->close();
+
+$connect->close();
 
 ?>
-   

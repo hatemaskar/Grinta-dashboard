@@ -1,67 +1,67 @@
 <?php
 
- // Create conenction
- $connect = mysqli_connect('127.0.0.1','root','','grinta');
+// Create conenction
+$connect = mysqli_connect('127.0.0.1', 'root', '', 'grinta');
 
 
-$question= '';
-$correctAns= '';
-$fakeAns1= '';
-$fakeAns2= '';
-$fakeAns3= '';
-$type= '';
-$difficulty= '';
-$category= '';
-$videoURL= '';
+$question = '';
+$correctAns = '';
+$fakeAns1 = '';
+$fakeAns2 = '';
+$fakeAns3 = '';
+$type = '';
+$difficulty = '';
+$category = '';
+$videoURL = '';
 
-$error_Message='';
-$successMessage ='';
+$error_Message = '';
+$successMessage = '';
 
 
 //Check if data transimetted using POST method
-if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
-    $question=   $_POST['question'];
-    $correctAns= $_POST['correctAns'];
-    $fakeAns1=   $_POST['fakeAns1'];
-    $fakeAns2=   $_POST['fakeAns2'];
-    $fakeAns3=   $_POST['fakeAns3'];
-    $type=       $_POST['type'];
-    $difficulty= $_POST['difficulty'];
-    $category=   $_POST['category'];
-    $videoURL=   $_POST['videoURL'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $question = $_POST['question'];
+    $correctAns = $_POST['correctAns'];
+    $fakeAns1 = $_POST['fakeAns1'];
+    $fakeAns2 = $_POST['fakeAns2'];
+    $fakeAns3 = $_POST['fakeAns3'];
+    $type = $_POST['type'];
+    $difficulty = $_POST['difficulty'];
+    $category = $_POST['category'];
+    $videoURL = $_POST['videoURL'];
 
-// Check required fileds if empty
+    // Check required fileds if empty
     do {
         if (empty('question') || empty('correctAns') || empty('category') || empty('type') || empty('difficulty')) {
             $error_Message = ' Question, Correct Answer, Category, Question type and Difficulty are required';
             break;
         }
-//Add new question to database
-        $sql= "INSERT INTO questions (question, correctAns, fakeAns1, fakeAns2, fakeAns3, type, difficulty, category, videoURL) VALUES ('" . $question . "' , '" . $correctAns . "' ,'" . $fakeAns1 . "' ,'" . $fakeAns2 . "' ,'" . $fakeAns3 . "' ,'" . $type . "' ,'" . $difficulty . "' ,'" . $category . "' ,'" . $videoURL . "' )";
+        //Add new question to database
+        $sql = "INSERT INTO questions (question, correctAns, fakeAns1, fakeAns2, fakeAns3, type, difficulty, category, videoURL) VALUES ('" . $question . "' , '" . $correctAns . "' ,'" . $fakeAns1 . "' ,'" . $fakeAns2 . "' ,'" . $fakeAns3 . "' ,'" . $type . "' ,'" . $difficulty . "' ,'" . $category . "' ,'" . $videoURL . "' )";
         $result = $connect->query($sql);
 
-        if(! $result){
+        if (!$result) {
             $error_Message = 'Invalid query' . $connect->error;
             break;
         }
 
-        $question= '';
-        $correctAns= '';
-        $fakeAns1= '';
-        $fakeAns2= '';
-        $fakeAns3= '';
-        $type= '';
-        $difficulty= '';
-        $category= '';
-        $videoURL= '';
+        $question = '';
+        $correctAns = '';
+        $fakeAns1 = '';
+        $fakeAns2 = '';
+        $fakeAns3 = '';
+        $type = '';
+        $difficulty = '';
+        $category = '';
+        $videoURL = '';
 
-       echo $successMessage = 'Question has been added successfuly!';
+        echo $successMessage = 'Question has been added successfuly!';
 
         //Redirect the user to Question List
         header('location:/Grinta-dashboard/postQuestions.php');
         exit;
 
-    } while(false);
+    } while (false);
 }
 
 
@@ -69,27 +69,29 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Question</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <h2>Add New Question</h2>
-        <?php  
-        if (!empty($error_Message)){
-           echo ' <div class="alert alert-warning" role="alert">
+        <?php
+        if (!empty($error_Message)) {
+            echo ' <div class="alert alert-warning" role="alert">
             <strong>$error_Message</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>';
         }
         ?>
         <form method='POST'>
-        <div class="row mb-3">
+            <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Question</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="question" value="<?php echo $question; ?>">
@@ -143,9 +145,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
                     <input type="text" class="form-control" name="videoURL" value="<?php echo $videoURL; ?>">
                 </div>
             </div>
-            <?php  
-                    if (!empty($successMessage)){
-                    echo '<div class="row mb-3">
+            <?php
+            if (!empty($successMessage)) {
+                echo '<div class="row mb-3">
                     <div class="offset-sm-3 col-sm-6">
                         <div class="alert alert-success" role="alert">
                             <strong>$successMessage</strong>
@@ -154,8 +156,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
                     </div>
                 
                 </div>';
-                    }
-             ?>
+            }
+            ?>
             <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
                     <button type="submit" class="btn btn-primary">Add</button>
@@ -165,9 +167,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
             </div>
         </form>
-           
+
 
     </div>
-    
+
 </body>
+
 </html>

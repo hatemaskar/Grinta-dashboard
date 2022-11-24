@@ -10,8 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" ></script>
 </head>
 <body>
-    <div class="" >
-        <h1 class="ttle">Hello</h1>
+    <div >
+        <h1">Hello</h1>
     </div>
     
 </body>
