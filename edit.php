@@ -89,11 +89,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <title>Edit Question</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            margin-top: 100px;
+            font-family: Tajawal;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        .question,
+        .correctAns,
+        .category,
+        .difficulty,
+        .type {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h2>Eidt Question</h2>
+        <h2>Edit Question</h2>
         <?php
         if (!empty($error_Message)) {
             echo ' <div class="alert alert-warning" role="alert">
@@ -105,13 +123,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         <form method='POST'>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Question</label>
+                <label class="col-sm-3 col-form-label question">Question</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="question" value="<?php echo $question; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Correct Answer</label>
+                <label class="col-sm-3 col-form-label correctAns">Correct Answer</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="correctAns" value="<?php echo $correctAns; ?>">
                 </div>
@@ -135,19 +153,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Question Type</label>
+                <label class="col-sm-3 col-form-label type">Question Type</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="type" value="<?php echo $type; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Difficulty</label>
+                <label class="col-sm-3 col-form-label difficulty">Difficulty</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="difficulty" value="<?php echo $difficulty; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Category</label>
+                <label class="col-sm-3 col-form-label category">Category</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="category" value="<?php echo $category; ?>">
                 </div>

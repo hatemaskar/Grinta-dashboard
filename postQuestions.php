@@ -15,7 +15,7 @@
             /* color: white; */
         }
 
-        table {
+        /* table {
             border: 1px solid #b3adad;
             border-collapse: collapse;
             padding: 5px;
@@ -31,7 +31,7 @@
             padding: 5px;
             background: #f0f0f0;
             color: #313030;
-            /* width: fit-content; */
+       
             border-radius: 5px;
         }
 
@@ -41,8 +41,8 @@
             padding: 5px;
             background: #ffffff;
             color: #313030;
-            te
-        }
+           
+        } */
     </style>
 </head>
 
@@ -56,7 +56,7 @@
         <table class="table" style="vertical-align: center;">
             <thead>
                 <tr class="header">
-                    <th id="id" style=" text-align: center; color:white; background-color:#293c58">ID</th>
+                    <th style=" text-align: center; color:white; background-color:#293c58">ID</th>
                     <th id="question" style=" text-align: center; color:white; background-color:#293c58">Question</th>
                     <th id="answer" style="color:white; background-color:green">Correct Answer</th>
                 </tr>
@@ -96,9 +96,9 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "
                         <tr>
-                             <td style='width:15px; font-size:18px; color:white; background-color:#293c58'>Q $row[id]</td>
-                             <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58'>$row[question]</td>
-                             <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green' >$row[correctAns]</td>
+                        <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green' >$row[correctAns]</td>
+                        <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58'>$row[question]</td>
+                        <td style='width:15px; font-size:18px; color:white; background-color:#293c58; font-weight:bold; text-align:center;'>Q $row[id]</td>
 
                         </tr>
                         <tr>
@@ -113,8 +113,8 @@
 
                         </tr>
                         <tr>
-                        <td>Video URL:$row[videoURL]</td>
-                        <td colspan='2' style='text-align: right; font-family:Tajawal;'>
+                        
+                        <td  font-family:Tajawal;'>
                         <a class='btn btn-primary btn sm' href='/Grinta-dashboard/edit.php?id=$row[id]'>Edit</a>
                         <a class='btn btn-danger btn sm remove' href='/Grinta-dashboard/delete.php?id=$row[id]'>Delete</a> 
                         </td>
