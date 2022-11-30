@@ -23,11 +23,22 @@ include 'functions.php';
                 <img src="./assets/logo.png" alt="">
             </div>
             <div class="menu-items">
-                <li>الرئيسية</li>
-                <li>اللاعبين</li>
-                <li>الأسئلة</li>
-                <li>الإعدادات</li>
+                <div>الرئيسية</div>
+                <div onclick="showPlayers()">اللاعبين</div>
+                <div>الأسئلة</div>
+                <div>الإعدادات</div>
             </div>
+            <script>
+                function showPlayers() {
+                    var usernames = document.getElementById('player-data');
+                    if (usernames.style.display === 'none') {
+                        usernames.style.display = 'block';
+                    }
+                    else {
+                        usernames.style.display = 'none';
+                    }
+                }
+            </script>
         </div>
 
         <div class="body-warpper">
@@ -56,6 +67,9 @@ include 'functions.php';
             </div>
             <div class="data-area">
                 <h2> Data Area</h2>
+                <div id="player-data">
+                    <?php include 'usernames.php' ?>
+                </div>
             </div>
 
         </div>
