@@ -23,11 +23,11 @@ img {
     font-size: 22px;
     /* align-items: right; */
     background-color: #1C2030;
-    /* width: fit-content; */
+    width: fit-content;
     height: 80vh;
     padding: 20px;
     border-radius: 15px;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     /* float: right; */
 }
 .menu-items{
