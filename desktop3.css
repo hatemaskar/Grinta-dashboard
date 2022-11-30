@@ -1,5 +1,11 @@
+.body{
+  background-color: #141722;
+}
+
 .desktop3-container {
   min-height: 100vh;
+  background-color: #2b4dcb;
+  color: #141722;
 }
 .desktop3-desktop3 {
   width: 100%;
@@ -42,6 +48,9 @@
 .users{
   color:white;
   top: 93px;
+}
+.tabel{
+  color: #44bae8;
 }
 .desktop3-group13 {
   top: 254.484375px;

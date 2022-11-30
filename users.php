@@ -162,21 +162,35 @@
               </span></span>
           </div>
           <div class="desktop3-group17">
+            <div class="container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Question</th>
+                    <th>Correct Answer</th>
+                    <th>Fake Answer 1</th>
+                    <th>Fake Answer 2</th>
+                    <th>Fake Answer 3</th>
+                    <th>Question Type</th>
+                    <th>Difficulty</th>
+                    <th>category</th>
+                    <th>Video URL</th>
+                  </tr>
+                </thead>
+
+            </div>
             <span class="desktop3-text29 users"><span>أعلى نقاط</span></span>
             <span class="desktop3-text31"><span>
                 <?php
-            echo '<pre>';
-            print_r($maxScore['maxScore']);
-            echo '</pre>';
+                echo '<pre>';
+                print_r($maxScore['maxScore']);
+                echo '</pre>';
 
 
-            ?>
+                ?>
               </span></span>
-            <span class='users'>
-              <?php
-            include 'usernames.php';
-            ?>
-            </span>
+
           </div>
           <div class="desktop3-group15">
             <span class="desktop3-text33"><span>الأسئلة</span></span>
