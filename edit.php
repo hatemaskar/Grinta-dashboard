@@ -93,10 +93,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         body {
             margin-top: 100px;
             font-family: Tajawal;
+            background-color: #141722;
+            color: white;
+            font-size: 20px;
+
         }
 
         h2 {
             font-weight: bold;
+            margin-bottom: 50px;
+            font-size: 32px;
         }
 
         .question,
@@ -105,6 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         .difficulty,
         .type {
             font-weight: bold;
+            font-size: 20px;
+        }
+
+        .inputBox {
+            text-align: right;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -122,60 +134,72 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         ?>
         <form method='POST'>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label question">Question</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="question" value="<?php echo $question; ?>">
+                    <input type="text" class="form-control inputBox" name="question" value="<?php echo $question; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label correctAns">Correct Answer</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="correctAns" value="<?php echo $correctAns; ?>">
+                    <input type="text" class="form-control inputBox" name="correctAns"
+                        value="<?php echo $correctAns; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Fake Answer 1</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="fakeAns1" value="<?php echo $fakeAns1; ?>">
+                    <input type="text" class="form-control inputBox" name="fakeAns1" value="<?php echo $fakeAns1; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Fake Answer 2</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="fakeAns2" value="<?php echo $fakeAns2; ?>">
+                    <input type="text" class="form-control inputBox" name="fakeAns2" value="<?php echo $fakeAns2; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Fake Answer 3</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="fakeAns3" value="<?php echo $fakeAns3; ?>">
+                    <input type="text" class="form-control inputBox" name="fakeAns3" value="<?php echo $fakeAns3; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label type">Question Type</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="type" value="<?php echo $type; ?>">
+                    <input type="text" class="form-control inputBox" name="type" value="<?php echo $type; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label difficulty">Difficulty</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="difficulty" value="<?php echo $difficulty; ?>">
+                    <input type="text" class="form-control inputBox" name="difficulty"
+                        value="<?php echo $difficulty; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label category">Category</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="category" value="<?php echo $category; ?>">
+                    <input type="text" class="form-control inputBox" name="category" value="<?php echo $category; ?>">
                 </div>
             </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Video URL</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="videoURL" value="<?php echo $videoURL; ?>">
+                    <input type="text" class="form-control inputBox" name="videoURL" value="<?php echo $videoURL; ?>">
                 </div>
             </div>
+
             <?php
             if (!empty($successMessage)) {
                 echo '<div class="row mb-3">
