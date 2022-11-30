@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -14,17 +14,6 @@
 
 <body>
     <div class="container">
-        <div class="body-warpper">
-            <div class="header">
-                <div id="header-users"> users</div>
-                <div id="header-questions">questions</div>
-                <div id="header-max-score">score</div>
-            </div>
-            <div class="data-area">
-                <h2> Data Area</h2>
-            </div>
-
-        </div>
         <div class="side-menu">
             <div class="logo">
                 <img src="./assets/logo.png" alt="">
@@ -36,6 +25,19 @@
                 <li>الإعدادات</li>
             </div>
         </div>
+
+        <div class="body-warpper">
+            <div class="header">
+                <div id="header-users"> users</div>
+                <div id="header-questions">questions</div>
+                <div id="header-max-score">score</div>
+            </div>
+            <div class="data-area">
+                <h2> Data Area</h2>
+            </div>
+
+        </div>
+
     </div>
 
 </body>

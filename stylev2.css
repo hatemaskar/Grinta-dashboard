@@ -3,7 +3,7 @@ body {
     font-family: Tajawal;
     color: white;
     margin-top: 100px;
-    margin-right: 20px;
+    /* margin-right: 10px; */
 }
 img {
     padding: 10px;
@@ -27,6 +27,7 @@ img {
     height: 80vh;
     padding: 20px;
     border-radius: 15px;
+    position: relative;
     /* flex-grow: 1; */
     /* float: right; */
 }
