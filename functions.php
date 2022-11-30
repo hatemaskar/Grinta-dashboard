@@ -67,5 +67,4 @@ $maxScore = mysqli_fetch_assoc($get_maxScore);
 //  };
 
 $connect->close();
-
-?>
+// echo $userNumber;

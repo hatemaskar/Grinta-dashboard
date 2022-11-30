@@ -13,7 +13,7 @@ include 'functions.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./stylev2.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="./scripts/script.js"></script>
 </head>
 
 <body>
@@ -28,17 +28,7 @@ include 'functions.php';
                 <div>الأسئلة</div>
                 <div>الإعدادات</div>
             </div>
-            <script>
-                function showPlayers() {
-                    var usernames = document.getElementById('player-data');
-                    if (usernames.style.display === 'none') {
-                        usernames.style.display = 'block';
-                    }
-                    else {
-                        usernames.style.display = 'none';
-                    }
-                }
-            </script>
+
         </div>
 
         <div class="body-warpper">
@@ -66,7 +56,7 @@ include 'functions.php';
                 </div>
             </div>
             <div class="data-area">
-                <h2> Data Area</h2>
+                <h2> </h2>
                 <div id="player-data">
                     <?php include 'usernames.php' ?>
                 </div>
