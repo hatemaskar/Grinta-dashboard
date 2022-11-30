@@ -8,11 +8,22 @@
     <title>Questions List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <style>
+        body {
+            /* background-color: #293c58; */
+            font-family: Tajawal;
+            font-weight: bold;
+            /* color: white; */
+        }
+
         table {
-            width: 100%;
             border: 1px solid #b3adad;
             border-collapse: collapse;
             padding: 5px;
+            text-align: left;
+            border-radius: 5px;
+
+
+
         }
 
         table th {
@@ -20,31 +31,34 @@
             padding: 5px;
             background: #f0f0f0;
             color: #313030;
-            width: max-content;
+            /* width: fit-content; */
+            border-radius: 5px;
         }
 
         table td {
             border: 1px solid #b3adad;
-            text-align: center;
+            text-align: left;
             padding: 5px;
             background: #ffffff;
             color: #313030;
-            width: fit-content;
+            te
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h2 style="padding-top:100px ;">Questions List</h2>
-        <a class="btn btn-primary" href="/Grinta-dashboard/create.php" role="button">Add Question</a>
+        <h2 style="padding-top:100px;">Questions List</h2>
+        <a style="font-family:Tajawal; margin-bottom: 10px;" class="btn btn-primary" href="/Grinta-dashboard/create.php"
+            role="button">Add
+            Question</a>
         <br>
-        <table class="table" style="width:50%" border="5px">
+        <table class="table" style="vertical-align: center;">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Question</th>
-                    <th>Correct Answer</th>
+                <tr class="header">
+                    <th id="id" style=" text-align: center; color:white; background-color:#293c58">ID</th>
+                    <th id="question" style=" text-align: center; color:white; background-color:#293c58">Question</th>
+                    <th id="answer" style="color:white; background-color:green">Correct Answer</th>
                 </tr>
                 <tr>
                     <th>Fake Answer 1</th>
@@ -59,6 +73,7 @@
                 <tr>
                     <th>Video URL</th>
                 </tr>
+
             </thead>
             <tbody>
                 <?php
@@ -81,15 +96,15 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "
                         <tr>
-                             <td>Q $row[id]</td>
-                             <td>$row[question]</td>
-                             <td>$row[correctAns]</td>
+                             <td style='width:15px; font-size:18px; color:white; background-color:#293c58'>Q $row[id]</td>
+                             <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58'>$row[question]</td>
+                             <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green' >$row[correctAns]</td>
 
                         </tr>
                         <tr>
-                        <td>$row[fakeAns1]</td>
-                        <td>$row[fakeAns2]</td>
-                        <td>$row[fakeAns3]</td>
+                        <td style='text-align:center;'>$row[fakeAns1]</td>
+                        <td style='text-align:center;'>$row[fakeAns2]</td>
+                        <td style='text-align:center;'>$row[fakeAns3]</td>
                         </tr>
                         <tr>
                         <td>Type: $row[type]</td>
@@ -99,7 +114,7 @@
                         </tr>
                         <tr>
                         <td>Video URL:$row[videoURL]</td>
-                        <td colspan='2'>
+                        <td colspan='2' style='text-align: right; font-family:Tajawal;'>
                         <a class='btn btn-primary btn sm' href='/Grinta-dashboard/edit.php?id=$row[id]'>Edit</a>
                         <a class='btn btn-danger btn sm remove' href='/Grinta-dashboard/delete.php?id=$row[id]'>Delete</a> 
                         </td>
