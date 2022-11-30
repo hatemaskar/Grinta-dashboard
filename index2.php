@@ -1,3 +1,7 @@
+<?php
+include 'functions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -28,9 +32,27 @@
 
         <div class="body-warpper">
             <div class="header">
-                <div id="header-users">عدد المستخدمين</div>
-                <div id="header-questions">عدد الأسئلة</div>
-                <div id="header-max-score">أعلى نقاط</div>
+                <div id="header-users">
+                    <div>عدد المستخدمين</div>
+                    <div id="php-numbers">
+                        <?php echo $userNumber; ?>
+                    </div>
+                </div>
+                <div id="header-questions">
+                    <div>عدد الاسئلة</div>
+                    <div id="php-numbers">
+                        <?php echo $questNumber; ?>
+                    </div>
+                </div>
+                <div id="header-max-score">
+                    <div>أعلى نقاط</div>
+                    <div id="php-numbers">
+                        <?php
+                        echo '<pre>';
+                        print_r($maxScore['maxScore']);
+                        echo '</pre>'; ?>
+                    </div>
+                </div>
             </div>
             <div class="data-area">
                 <h2> Data Area</h2>
