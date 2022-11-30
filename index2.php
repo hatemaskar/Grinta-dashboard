@@ -28,9 +28,9 @@
 
         <div class="body-warpper">
             <div class="header">
-                <div id="header-users"> users</div>
-                <div id="header-questions">questions</div>
-                <div id="header-max-score">score</div>
+                <div id="header-users">عدد المستخدمين</div>
+                <div id="header-questions">عدد الأسئلة</div>
+                <div id="header-max-score">أعلى نقاط</div>
             </div>
             <div class="data-area">
                 <h2> Data Area</h2>

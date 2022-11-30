@@ -10,7 +10,7 @@ img {
     padding-bottom: 50px;
 }
 .container {
-    /* float: right; */
+  
     display: flex;
     flex-grow: 1;
     text-align: center;
@@ -21,18 +21,17 @@ img {
 }
 .side-menu {
     font-size: 22px;
-    /* align-items: right; */
+   display: block;
     background-color: #1C2030;
     width: fit-content;
     height: 80vh;
     padding: 20px;
     border-radius: 15px;
     position: relative;
-    /* flex-grow: 1; */
-    /* float: right; */
+ 
 }
 .menu-items{
-    text-align: center;
+    text-align: right;
     font-size: 26px;
 
 }
@@ -55,8 +54,11 @@ img {
 }
 
 .body-wrapper {
+    display: flex;
     flex-grow: 1;
     background-color: green;
     margin: 20px;
-    display: flex;
+}
+.data-area{
+    background-color: aqua;
 }
