@@ -24,12 +24,20 @@ $connect->close();
 ?> -->
 <style>
    .table,
-   .tbody {
+   .tbody,
+   .thead,
+   .h2 {
       color: white;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       position: absolute;
+      flex-wrap: wrap;
+      flex-grow: 1;
    }
+ 
+    
+      
+
 
    .container {
       display: flex;
@@ -43,15 +51,15 @@ $connect->close();
       <br>
       <table class="table">
          <thead>
-            <!-- <tr class="header">
+            <tr class="header">
                <th>Username</th>
                <th id="question">Max score</th>
                <th id="answer">Email</th>
-            </tr> -->
+            </tr>
 
 
          </thead>
-         <tbody style="margin:20px; margin-top:50px; font-size: 20px;">
+         <tbody style="margin:20px; margin-top:30px; font-size: 20px;">
             <?php
             // Create conenction
             $connect = mysqli_connect('127.0.0.1', 'root', '', 'grinta');
@@ -62,7 +70,7 @@ $connect->close();
             }
 
             // Read all row from database table
-            $sql = 'SELECT * FROM users ';
+            $sql = 'SELECT * FROM users ORDER BY users.maxscore DESC ';
             $result = $connect->query($sql);
 
             if (!$result) {
@@ -72,9 +80,9 @@ $connect->close();
             while ($row = $result->fetch_assoc()) {
                echo "
                         <tr>
-                        <td >$row[name]</td>
-                        <td >$row[maxScore]</td>
-                        <td > $row[email]</td>
+                        <td style='text-align: left;'>$row[name]</td>
+                        <td style='text-align: center;'>$row[maxScore]</td>
+                        <td style='text-align: left;' > $row[email]</td>
                         </tr>
                     
                         ";
@@ -84,7 +92,11 @@ $connect->close();
          </tbody>
       </table>
 
-
+<style>
+   body{
+      
+   }
+</style>
 
    </div>
 

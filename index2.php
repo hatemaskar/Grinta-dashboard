@@ -18,19 +18,20 @@ include 'functions.php';
 
 <body>
     <div class="container">
-        <div class="side-menu">
+        <div class="side-menu-continer">
+            <div class="side-menu-items">
             <div class="logo">
                 <img src="./assets/logo.png" alt="">
             </div>
             <div class="menu-items">
                 <div>الرئيسية</div>
                 <div onclick="showPlayers()">اللاعبين</div>
-                <div>الأسئلة</div>
+                <div><a href="./postQuestions.php">الأسئلة</a></div>
                 <div>الإعدادات</div>
+            </div>
             </div>
 
         </div>
-
         <div class="body-warpper">
             <div class="header">
                 <div id="header-users">
@@ -56,14 +57,15 @@ include 'functions.php';
                 </div>
             </div>
             <div class="data-area">
-                <h2> </h2>
+                <h2>Hello </h2>
                 <div id="player-data">
                     <?php include 'usernames.php' ?>
                 </div>
             </div>
+           
 
         </div>
-
+       
     </div>
 
 </body>

@@ -8,7 +8,7 @@ function delete()
     $result = $connect->query($sql) or die('Error');
 
     if ($result) {
-        header("location: /Grinta-dashboard/postQuestions.php?msg=Question delete successfully!");
+        header("location: /Grinta-dashboard/postQuestions.php?");
 
     } else {
         echo "Failed: " . mysqli_error($connect);
