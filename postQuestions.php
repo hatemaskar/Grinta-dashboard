@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,11 @@
     <title>Questions List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <style>
-        body {
-            /* background-color: #293c58; */
+        body, table, .tbody, tr, td {
+            background-color: #161722;
             font-family: Tajawal;
             font-weight: bold;
-            /* color: white; */
+            color: white;
         }
 
         /* table {
@@ -48,30 +48,34 @@
 
 <body>
     <div class="container">
-        <h2 style="padding-top:100px;">Questions List</h2>
+        <div style="position:absolute; padding: 20px;" class="logo">
+                <img src="./assets/logo.png" alt="">
+            </div>
+        <h2 style="padding-top:100px; text-align: center; font-size: 36px;">Questions List</h2>
         <a style="font-family:Tajawal; margin-bottom: 10px;" class="btn btn-primary" href="/Grinta-dashboard/create.php"
-            role="button">Add
-            Question</a>
+            role="button">إضافة سؤال</a>
+            <a style="font-family:Tajawal; margin-bottom: 10px;" class="btn btn-primary" href="/Grinta-dashboard/index2.php"
+            role="button">رجوع</a>
         <br>
         <table class="table" style="vertical-align: center;">
             <thead>
                 <tr class="header">
-                    <th style=" text-align: center; color:white; background-color:#293c58">ID</th>
-                    <th id="question" style=" text-align: center; color:white; background-color:#293c58">Question</th>
-                    <th id="answer" style="color:white; background-color:green">Correct Answer</th>
+                    <th style=" text-align: center; color:white; background-color:#293c58">رقم السؤال</th>
+                    <th id="question" style=" text-align: center; color:white; background-color:#293c58">السؤال</th>
+                    <th id="answer" style="color:white; background-color:green">الأجابة الصحيحة</th>
                 </tr>
                 <tr>
-                    <th>Fake Answer 1</th>
-                    <th>Fake Answer 2</th>
-                    <th>Fake Answer 3</th>
+                    <th>أجابة خطأ 1</th>
+                    <th>أجابة خطأ 2</th>
+                    <th>أجابة خطأ 3</th>
                 </tr>
                 <tr>
-                    <th>Question Type</th>
-                    <th>Difficulty</th>
-                    <th>category</th>
+                    <th>نوع السؤال</th>
+                    <th>الصعوبة</th>
+                    <th>التصنيف</th>
                 </tr>
                 <tr>
-                    <th>Video URL</th>
+                    <th>رابط الفيديو</th>
                 </tr>
 
             </thead>
@@ -96,9 +100,9 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "
                         <tr>
-                        <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green' >$row[correctAns]</td>
-                        <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58'>$row[question]</td>
                         <td style='width:15px; font-size:18px; color:white; background-color:#293c58; font-weight:bold; text-align:center;'>Q $row[id]</td>
+                        <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58'>$row[question]</td>
+                        <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green' >$row[correctAns]</td>
 
                         </tr>
                         <tr>
