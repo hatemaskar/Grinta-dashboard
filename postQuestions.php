@@ -51,10 +51,10 @@
         <div style="position:absolute; padding: 20px;" class="logo">
                 <img src="./assets/logo.png" alt="">
             </div>
-        <h2 style="padding-top:100px; text-align: center; font-size: 36px;">Questions List</h2>
+        <h2 style="padding-top:100px; text-align: center; font-size: 36px;">قائمة الأسئلة</h2>
         <a style="font-family:Tajawal; margin-bottom: 10px;" class="btn btn-primary" href="/Grinta-dashboard/create.php"
             role="button">إضافة سؤال</a>
-            <a style="font-family:Tajawal; margin-bottom: 10px;" class="btn btn-primary" href="/Grinta-dashboard/index2.php"
+            <a style="font-family:Tajawal; margin-bottom: 10px;" class="btn btn-primary" href="/Grinta-dashboard/index.php"
             role="button">رجوع</a>
         <br>
         <table class="table" style="vertical-align: center;">
@@ -100,9 +100,9 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "
                         <tr>
-                        <td style='width:15px; font-size:18px; color:white; background-color:#293c58; font-weight:bold; text-align:center;'>Q $row[id]</td>
-                        <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58'>$row[question]</td>
-                        <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green' >$row[correctAns]</td>
+                        <td style='width:15px; font-size:18px; color:white; background-color:#293c58; font-weight:bold;border-radius: 16px; text-align:center;margin:10px;'>Q $row[id]</td>
+                        <td style='font-size:18px; font-weight:bold; text-align:right; color:white; background-color:#293c58; border-radius: 16px; margin:10px;'>$row[question]</td>
+                        <td style='font-size:18px; color:green; font-weight:bold; text-align:center;color:white; background-color:green;border-radius: 16px; margin:10px;' >$row[correctAns]</td>
 
                         </tr>
                         <tr>

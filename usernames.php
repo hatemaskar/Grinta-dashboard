@@ -22,7 +22,21 @@ while ($playerList = mysqli_fetch_assoc($get_users)) {
 
 $connect->close();
 ?> -->
+
+<!-- <html lang="ar" dir="rtl"></html> -->
+
 <style>
+
+body {
+    background-color: #151722;
+    font-family: Tajawal;
+    color: white;
+    margin-top: 100px;
+   margin: auto;
+   max-width: 800px;
+   text-align: right;
+}
+
    .table,
    .tbody,
    .thead,
@@ -36,22 +50,24 @@ $connect->close();
    }
  
     
-      
 
 
    .container {
-      display: flex;
-
+      /* display: flex; */
+      margin: 100px;
    }
 </style>
 
 <body>
    <div class="container">
-      <h2 style="text-align: center;">اللاعبين</h2>
+   <div class="logo-usernames"  style="position:relative;display:block; margin-right: auto; margin-left: auto;width:50%;">
+                <img src="./assets/logo.png" alt="">
+            </div>
+      <h2 style="text-align: center; font-size:48px;">اللاعبين</h2>
       <br>
       <table class="table">
          <thead>
-            <tr class="header">
+            <tr class="header" style="margin:20px; margin-top:30px; font-size: 20px;width:80%;">
                <th>Username</th>
                <th id="question">Max score</th>
                <th id="answer">Email</th>
